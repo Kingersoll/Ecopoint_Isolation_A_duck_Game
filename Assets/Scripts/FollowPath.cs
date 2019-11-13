@@ -31,7 +31,7 @@ public class FollowPath : MonoBehaviour
     
     private void Start()
     {
-
+        anim = GetComponent<Animator>();
         // Set position of Enemy as position of the first waypoint
 
         transform.position = waypoints[waypointIndex].transform.position;
@@ -102,7 +102,7 @@ public class FollowPath : MonoBehaviour
 
         RaycastHit2D hit;
         hit = Physics2D.Raycast(transform.position, transform.position - playerPosition.position);
-        if(hit.)
+        //if(hit.)
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
