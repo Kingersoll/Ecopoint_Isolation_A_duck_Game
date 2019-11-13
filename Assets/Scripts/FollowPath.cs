@@ -121,6 +121,7 @@ public class FollowPath : MonoBehaviour
     public void startChase()
     {
         ChaseEnabled = true;
+        anim.SetTrigger("Chase");
         // play anim and sounds so signify the player has been caught
     }
 
