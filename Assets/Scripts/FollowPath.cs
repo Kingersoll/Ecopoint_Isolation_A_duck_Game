@@ -8,17 +8,25 @@ public class FollowPath : MonoBehaviour
     [SerializeField]
     private Transform[] waypoints;
 
+    [SerializeField] Transform playerPosition;
+
     // Walk speed that can be set in Inspector
     [SerializeField]
     private float moveSpeed = 2f;
 
-    // Index of current waypoint from which Enemy walks
-    // to the next one
+    // Index of current waypoint from which Enemy walks to the next one
+   
     private int waypointIndex = 0;
 
-    public float speed;
+    //the position that the enemy left its pathing
+    private Transform PositionLeftPat;
+
+    //speed of the turn 
+    public float speed, chaseSpeed;
 
     public bool ChaseEnabled;
+
+    private Animator anim;
 
     
     private void Start()
@@ -35,6 +43,8 @@ public class FollowPath : MonoBehaviour
         if (ChaseEnabled)
         {
             //chasing function
+            chase();
+
         }
         else
         {
@@ -81,7 +91,18 @@ public class FollowPath : MonoBehaviour
 
     private void chase()
     {
+        Vector3 vectorToTarget = playerPosition.position - transform.position;
+        float angle = (Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg) + 90;
+        Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+        transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * speed);
 
+        transform.position = Vector2.MoveTowards(transform.position,
+              playerPosition.position,
+              chaseSpeed * Time.deltaTime);
+
+        RaycastHit2D hit;
+        hit = Physics2D.Raycast(transform.position, transform.position - playerPosition.position);
+        if(hit.)
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -93,6 +114,8 @@ public class FollowPath : MonoBehaviour
             startChase();
         }
 
+        
+
     }
 
     public void startChase()
@@ -103,6 +126,6 @@ public class FollowPath : MonoBehaviour
 
     public void endChase()
     {
-
+        ChaseEnabled = false;
     }
 }
