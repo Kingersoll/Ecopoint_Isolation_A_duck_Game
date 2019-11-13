@@ -79,6 +79,11 @@ public class FollowPath : MonoBehaviour
         }
     }
 
+    private void chase()
+    {
+
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.transform.gameObject.tag == "Player")
