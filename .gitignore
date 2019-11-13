@@ -61,3 +61,6 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+Assets/Audio/door_sfx.wav.meta
+Assets/Audio.meta
+Assets/Audio/door_sfx.wav.meta
