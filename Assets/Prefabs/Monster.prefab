@@ -80,10 +80,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7721672890078787715}
   - component: {fileID: 7721672890078787717}
-  - component: {fileID: 7721672890078787716}
   - component: {fileID: 7721672890078787718}
   - component: {fileID: 7721672890078787719}
   - component: {fileID: 2248278542782975786}
+  - component: {fileID: 1630088847520891002}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Untagged
@@ -154,38 +154,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7721672890078787716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7721672890078787714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 965ac7a4c5668e04292b7b2f80aa43bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  playerPosition: {fileID: 0}
-  moveSpeed: 1.6
-  speed: 3
-  chaseSpeed: 0
-  ChaseEnabled: 0
-  mask:
-    serializedVersion: 2
-    m_Bits: 0
-  AudioSource: {fileID: 0}
-  roarClip: {fileID: 8300000, guid: 8e81ceec316da7748acd1586f54dcc7d, type: 3}
 --- !u!60 &7721672890078787718
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -339,3 +307,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1630088847520891002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7721672890078787714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 965ac7a4c5668e04292b7b2f80aa43bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints: []
+  playerPosition: {fileID: 0}
+  moveSpeed: 2
+  speed: 4
+  chaseSpeed: 5
+  ChaseEnabled: 0
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
+  AudioSource: {fileID: 0}
+  roarClip: {fileID: 0}
