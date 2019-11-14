@@ -1,34 +1,34 @@
 fileFormatVersion: 2
-guid: 727874332dbae6242bd3b0cf3fbf2c87
+guid: 651d0a68e560c844ba5b524bab9fbe38
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2685058143707984160
-    second: HallwayVertical (1)_0
+      213: 4102073316658005703
+    second: HallwayVertical-8.png_0
   - first:
-      213: -8369940033651075735
-    second: HallwayVertical (1)_1
+      213: 2915165832096200347
+    second: HallwayVertical-8.png_1
   - first:
-      213: -4233485231325800743
-    second: HallwayVertical (1)_2
+      213: -8064378821755609026
+    second: HallwayVertical-8.png_2
   - first:
-      213: -6470953798578448926
-    second: HallwayVertical (1)_3
+      213: -590564256729975389
+    second: HallwayVertical-8.png_3
   - first:
-      213: -6430650749420741492
-    second: HallwayVertical (1)_4
+      213: 3678890906885874346
+    second: HallwayVertical-8.png_4
   - first:
-      213: -8647864236896332190
-    second: HallwayVertical (1)_5
+      213: 8893723089560581144
+    second: HallwayVertical-8.png_5
   - first:
-      213: 2652742065632570948
-    second: HallwayVertical (1)_6
+      213: -1573605383265385804
+    second: HallwayVertical-8.png_6
   - first:
-      213: 1025358414985565681
-    second: HallwayVertical (1)_7
+      213: 8035842822270682933
+    second: HallwayVertical-8.png_7
   - first:
-      213: -5125467384524919816
-    second: HallwayVertical (1)_8
+      213: -3461662291532295454
+    second: HallwayVertical-8.png_8
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -59,7 +59,7 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
+    aniso: 1
     mipBias: -100
     wrapU: 1
     wrapV: 1
@@ -111,13 +111,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HallwayVertical (1)_0
+      name: HallwayVertical-8.png_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 512
-        width: 256
-        height: 256
+        y: 170.66666
+        width: 85.333336
+        height: 85.333336
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,20 +125,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ddc92305b5a3d3479b45ec7c8749a86
-      internalID: -2685058143707984160
+      spriteID: 05b14c1f203fc2e4487ecbf199ab45b8
+      internalID: 4102073316658005703
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HallwayVertical (1)_1
+      name: HallwayVertical-8.png_1
       rect:
         serializedVersion: 2
-        x: 256
-        y: 512
-        width: 256
-        height: 256
+        x: 85
+        y: 170.66666
+        width: 85.333336
+        height: 85.333336
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,20 +146,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be542a23cefc54948b071b34696255df
-      internalID: -8369940033651075735
+      spriteID: eee1ac4ea62907c48ab607950d0b10bd
+      internalID: 2915165832096200347
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HallwayVertical (1)_2
+      name: HallwayVertical-8.png_2
       rect:
         serializedVersion: 2
-        x: 512
-        y: 512
-        width: 256
-        height: 256
+        x: 170
+        y: 170.66666
+        width: 85.333336
+        height: 85.333336
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,83 +167,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b89d74605715dc4aa0606e6b8377b4e
-      internalID: -4233485231325800743
+      spriteID: 872abeb35fa76d045a391ca0f7304e6b
+      internalID: -8064378821755609026
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HallwayVertical (1)_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 256
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0f8d5a1fbe883e949a30fd6672255763
-      internalID: -6470953798578448926
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HallwayVertical (1)_4
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 256
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f785bf02f97b5764da2e4f5dacae204b
-      internalID: -6430650749420741492
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HallwayVertical (1)_5
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 256
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0c3a2ef305a10d847b497e5374550504
-      internalID: -8647864236896332190
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HallwayVertical (1)_6
+      name: HallwayVertical-8.png_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 256
-        height: 256
+        y: 85.666664
+        width: 85.333336
+        height: 85.333336
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -251,20 +188,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eced5ff53875fee4884e852cc1ba4f3e
-      internalID: 2652742065632570948
+      spriteID: bea117f5348b3764c8d0d9f9306ded23
+      internalID: -590564256729975389
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HallwayVertical (1)_7
+      name: HallwayVertical-8.png_4
       rect:
         serializedVersion: 2
-        x: 256
-        y: 0
-        width: 256
-        height: 256
+        x: 85
+        y: 85.666664
+        width: 85.333336
+        height: 85.333336
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -272,20 +209,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7568491b5d160fd4f84903f1dfe4bd0b
-      internalID: 1025358414985565681
+      spriteID: b71aa605fa0546545bd4780fbabdbb40
+      internalID: 3678890906885874346
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HallwayVertical (1)_8
+      name: HallwayVertical-8.png_5
       rect:
         serializedVersion: 2
-        x: 512
-        y: 0
-        width: 256
-        height: 256
+        x: 170
+        y: 85.666664
+        width: 85.333336
+        height: 85.333336
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -293,8 +230,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b721955d56c40bc428121ba9606c282c
-      internalID: -5125467384524919816
+      spriteID: b0723e52c29e7b04aa11162872761707
+      internalID: 8893723089560581144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HallwayVertical-8.png_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.6666641
+        width: 85.333336
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01ff9a865aa519943afdc38812fab106
+      internalID: -1573605383265385804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HallwayVertical-8.png_7
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 0.6666641
+        width: 85.333336
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d86891fd1db217469b09407fa907d43
+      internalID: 8035842822270682933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HallwayVertical-8.png_8
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 0.6666641
+        width: 85.333336
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2f3f6ff81edbea458292c19e2de2638
+      internalID: -3461662291532295454
       vertices: []
       indices: 
       edges: []
@@ -302,7 +302,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8b0abfbcb89017045be2a67983b069a7
+    spriteID: 6f66c358ca744f944a94bc5e9e04d901
     internalID: 0
     vertices: []
     indices: 
