@@ -30,8 +30,15 @@ public class FollowPath : MonoBehaviour
 
     public LayerMask mask;
 
+    public AudioSource AudioSource;
+
+    public AudioClip roarClip;
+
     private void Start()
     {
+        AudioSource = GetComponent<AudioSource>();
+        AudioSource.clip = roarClip;
+
         anim = GetComponent<Animator>();
         // Set position of Enemy as position of the first waypoint
 
@@ -127,21 +134,36 @@ public class FollowPath : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.transform.gameObject.tag == "Player")
+        if (collision.transform.gameObject.tag == "Player")
         {
+
             print("heck me up");
             //trigger chase action
-            startChase();
+            
         }
+        RaycastHit2D hit;
 
-        
+        hit = Physics2D.Raycast(transform.position, playerPosition.position - transform.position, 700, LayerMask.GetMask("Player"));
 
+
+
+        if (hit.collider != null)
+        {
+
+            if (hit.collider.gameObject.tag == "Player")
+            {
+                startChase();
+            }
+
+        }
     }
 
     public void startChase()
     {
+        
         ChaseEnabled = true;
         anim.SetTrigger("Chase");
+        playRoar();
         anim.ResetTrigger("StopChase");
         // play anim and sounds so signify the player has been caught
 
@@ -152,5 +174,10 @@ public class FollowPath : MonoBehaviour
         ChaseEnabled = false;
         anim.ResetTrigger("Chase");
         anim.SetTrigger("StopChase");
+    }
+
+    public void playRoar()
+    {
+        AudioSource.Play();
     }
 }

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -106,4 +108,14 @@ public class PlayerController : MonoBehaviour
         
 
     }
+
+
+    //called from the enemy to end the game
+    public void endGame()
+    {
+        SceneManager.LoadScene(0);
+        print("get shit on kid you suck hehehe");
+    }
+
+
 }
