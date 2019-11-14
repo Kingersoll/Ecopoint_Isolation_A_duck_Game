@@ -28,7 +28,8 @@ public class FollowPath : MonoBehaviour
 
     private Animator anim;
 
-    
+    public LayerMask mask;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -101,15 +102,34 @@ public class FollowPath : MonoBehaviour
               chaseSpeed * Time.deltaTime);
 
         RaycastHit2D hit;
-        hit = Physics2D.Raycast(transform.position, transform.position - playerPosition.position);
-        //if(hit.)
+
+         hit = Physics2D.Raycast(transform.position,  playerPosition.position - transform.position ,700,LayerMask.GetMask("Player"));
+
+      
+
+        if (hit.collider != null)
+        {
+           
+
+            print(hit.collider.tag);
+
+            if(hit.collider.gameObject.tag == "Player")
+            {
+                print("player in sights");
+            }
+            else
+            {
+                endChase();
+            }
+        }
+       
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.transform.gameObject.tag == "Player")
         {
-            print("hehck me up");
+            print("heck me up");
             //trigger chase action
             startChase();
         }
@@ -122,11 +142,15 @@ public class FollowPath : MonoBehaviour
     {
         ChaseEnabled = true;
         anim.SetTrigger("Chase");
+        anim.ResetTrigger("StopChase");
         // play anim and sounds so signify the player has been caught
+
     }
 
     public void endChase()
     {
         ChaseEnabled = false;
+        anim.ResetTrigger("Chase");
+        anim.SetTrigger("StopChase");
     }
 }

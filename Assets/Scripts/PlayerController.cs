@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public Camera cam;
     private GameObject gob;
 
+    private Animator Anim;
 
     //void Start(){
     //anim = GetComponent<Animator> ();
@@ -17,6 +18,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         gob = new GameObject();
+        Anim = GetComponent<Animator>();
     }
     // Update is called once per frame
     void Update()
@@ -33,27 +35,54 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
+            Anim.ResetTrigger("Idle");
+            Anim.SetTrigger("Walk");
             moveVelocityX = -speed;
         }
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
+            Anim.ResetTrigger("Idle");
+            Anim.SetTrigger("Walk");
             moveVelocityX = speed;
         }
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
+            Anim.ResetTrigger("Idle");
+            Anim.SetTrigger("Walk");
             moveVelocityY = speed;
         }
         if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
+            Anim.ResetTrigger("Idle");
+            Anim.SetTrigger("Walk");
             moveVelocityY = -speed;
         }
 
-        if (Input.GetMouseButtonDown(0))
+
+
+        //Key ups for changin back to idle
+        if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A))
         {
-
-      
-
+            print("keyUp");
+            Anim.SetTrigger("Idle");
+            Anim.ResetTrigger("Walk");
         }
+        if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D))
+        {
+            Anim.ResetTrigger("Walk");
+            Anim.SetTrigger("Idle");
+        }
+        if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W))
+        {
+            Anim.ResetTrigger("Walk");
+            Anim.SetTrigger("Idle");
+        }
+        if (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.S))
+        {
+            Anim.ResetTrigger("Walk");
+            Anim.SetTrigger("Idle");
+        }
+
 
 
         GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, moveVelocityY);
@@ -65,9 +94,16 @@ public class PlayerController : MonoBehaviour
         gob.transform.position = cam.ScreenToWorldPoint(Input.mousePosition);
         // point our object at the dummy object
 
-        transform.LookAt(gob.transform, Vector3.forward);
+       // transform.LookAt(gob.transform, Vector3.forward);
 
 
+        Vector3 vectorToTarget = gob.transform.position - transform.position;
+        float angle = (Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg) + 90;
+        Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+        transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * speed);
+
+       
+        
 
     }
 }
