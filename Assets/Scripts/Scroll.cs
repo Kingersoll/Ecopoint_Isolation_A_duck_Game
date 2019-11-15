@@ -15,7 +15,7 @@ public class Scroll : MonoBehaviour
     {
         Vector3 pos = transform.position;
         pos.x -= speed * Time.deltaTime;
-        print("hey?");
+
         if(pos.x < endX)
         {
             pos.x = startX;

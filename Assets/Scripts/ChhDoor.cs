@@ -6,17 +6,24 @@ public class ChhDoor : MonoBehaviour
 {
     private Animator anim;
 
+
+    private AudioSource AudioSource;
+
+    public AudioClip ChhClip;
+
     private void Start()
     {
+        AudioSource = gameObject.GetComponent<AudioSource>();
+        AudioSource.clip = ChhClip;
         anim = GetComponent<Animator>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("what what");
+
         if (collision.gameObject.tag == "Player")
         {
-            print("what");
+            AudioSource.Play();
             anim.SetTrigger("Enter Door");
             anim.ResetTrigger("Leave Door");
         }

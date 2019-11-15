@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class NewBehaviourScript : MonoBehaviour
 {
 
@@ -11,11 +12,17 @@ public class NewBehaviourScript : MonoBehaviour
     // the image you want to fade, assign in inspector
     public Image img;
 
+    public void fade()
+    {
+        StartCoroutine(FadeImage(false));
+
+    }
+
+
     public void OnButtonClick()
     {
         // fades the image out when you click
-        StartCoroutine(FadeImage(false));
-        print("fade");
+        SceneManager.LoadScene(0);
     }
 
     IEnumerator FadeImage(bool fadeAway)

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,20 +14,29 @@ public class PlayerController : MonoBehaviour
 
     private Animator Anim;
 
-    //void Start(){
-    //anim = GetComponent<Animator> ();
-    //}
+    public GameObject retryButton;
+    
+    public Canvas UiStuff;
+    //this is the menu script
+
+    private NewBehaviourScript behave;
+
+    private bool gameActive = true;
+
+    private AudioSource AudioSource;
+
+    public AudioClip DieClip;
     void Start()
     {
+        AudioSource = GetComponent<AudioSource>();
+        AudioSource.clip = DieClip;
+
+
         gob = new GameObject();
         Anim = GetComponent<Animator>();
+        behave = UiStuff.GetComponent<NewBehaviourScript>();
     }
-    // Update is called once per frame
-    void Update()
-    {
-      
-
-    }
+   
 
 
     private void FixedUpdate()
@@ -65,7 +74,7 @@ public class PlayerController : MonoBehaviour
         //Key ups for changin back to idle
         if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A))
         {
-            print("keyUp");
+
             Anim.SetTrigger("Idle");
             Anim.ResetTrigger("Walk");
         }
@@ -113,9 +122,19 @@ public class PlayerController : MonoBehaviour
     //called from the enemy to end the game
     public void endGame()
     {
-        SceneManager.LoadScene(0);
-        print("get shit on kid you suck hehehe");
+        
+        if (gameActive)
+        {
+            AudioSource.clip = DieClip;
+            AudioSource.Play();
+            gameActive = false;
+            retryButton.SetActive(true);
+            behave.fade();
+
+        }
     }
+
+
 
 
 }
