@@ -23,8 +23,14 @@ public class PlayerController : MonoBehaviour
 
     private bool gameActive = true;
 
+    private AudioSource AudioSource;
+
+    public AudioClip DieClip;
     void Start()
     {
+        AudioSource = GetComponent<AudioSource>();
+        AudioSource.clip = DieClip;
+
 
         gob = new GameObject();
         Anim = GetComponent<Animator>();
@@ -119,6 +125,8 @@ public class PlayerController : MonoBehaviour
         
         if (gameActive)
         {
+            AudioSource.clip = DieClip;
+            AudioSource.Play();
             gameActive = false;
             retryButton.SetActive(true);
             behave.fade();
