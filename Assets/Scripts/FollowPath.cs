@@ -33,11 +33,13 @@ public class FollowPath : MonoBehaviour
     private AudioSource AudioSource;
 
     public AudioClip roarClip;
+    public AudioClip crawlingSound;
 
     private void Start()
     {
+
         AudioSource = GetComponent<AudioSource>();
-        AudioSource.clip = roarClip;
+        AudioSource.clip = crawlingSound;
 
         anim = GetComponent<Animator>();
         // Set position of Enemy as position of the first waypoint
@@ -185,6 +187,9 @@ public class FollowPath : MonoBehaviour
 
     public void playRoar()
     {
+        AudioSource.clip = roarClip;
         AudioSource.Play();
+        AudioSource.clip = crawlingSound;
+
     }
 }
