@@ -23,7 +23,7 @@ public class End : MonoBehaviour
     {
         if (gun.color.r == 1&& clip.color.r == 1&& ammo.color.r == 1)
         {
-            player.winGame();
+            player.GetComponent<PlayerController>().winGame();
         }
 
 

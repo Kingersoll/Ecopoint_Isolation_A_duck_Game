@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
 
     public AudioClip DieClip;
 
+    public AudioClip  gunShot;
 
     void Start()
     {
@@ -154,8 +155,10 @@ public class PlayerController : MonoBehaviour
     public void winGame()
     {
         Anim.SetTrigger("Kill");
+
         blackBehav.fade();
-        
+
+        AudioSource.clip = gunShot;
     }
 
 
