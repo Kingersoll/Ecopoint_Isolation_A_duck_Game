@@ -25,12 +25,19 @@ public class PlayerController : MonoBehaviour
 
     private AudioSource AudioSource;
 
+    public AudioClip ambient;
+
+    public AudioClip finSong;
+
     public AudioClip DieClip;
+
+
     void Start()
     {
         AudioSource = GetComponent<AudioSource>();
-        AudioSource.clip = DieClip;
 
+        AudioSource.clip = ambient;
+        AudioSource.Play();
 
         gob = new GameObject();
         Anim = GetComponent<Animator>();
@@ -127,14 +134,25 @@ public class PlayerController : MonoBehaviour
         {
             AudioSource.clip = DieClip;
             AudioSource.Play();
+           
+
+            StartCoroutine(startFin());
+
             gameActive = false;
             retryButton.SetActive(true);
             behave.fade();
 
         }
+
     }
 
-
+    IEnumerator startFin()
+    {
+        yield return new WaitForSeconds(1.1f);
+        AudioSource.clip = finSong;
+        
+        AudioSource.Play();
+    }
 
 
 }

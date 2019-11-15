@@ -188,8 +188,18 @@ public class FollowPath : MonoBehaviour
     public void playRoar()
     {
         AudioSource.clip = roarClip;
-        AudioSource.Play();
-        AudioSource.clip = crawlingSound;
 
+        AudioSource.Play();
+
+        StartCoroutine(stopClick());
+     
+
+    }
+
+    IEnumerator stopClick()
+    {
+        yield return new WaitForSeconds(.8f);
+        AudioSource.clip = crawlingSound;
+        AudioSource.Play();
     }
 }

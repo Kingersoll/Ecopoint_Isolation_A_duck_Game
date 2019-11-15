@@ -15,7 +15,7 @@ public class UI_Assistant : MonoBehaviour
 
     private void Start()
     {
-        textWriter.AddWriter(messageText, "Ecopoint Isolation", .25f, true);
+        textWriter.AddWriter(messageText, "Ecopoint Isolation", .2f, true);
 
     }
 }
