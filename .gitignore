@@ -64,3 +64,4 @@ crashlytics-build.properties
 Assets/Audio/door_sfx.wav.meta
 Assets/Audio.meta
 Assets/Audio/door_sfx.wav.meta
+*.meta
