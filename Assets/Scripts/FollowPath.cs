@@ -139,7 +139,7 @@ public class FollowPath : MonoBehaviour
         
         RaycastHit2D hit;
 
-        hit = Physics2D.Raycast(transform.position, playerPosition.position - transform.position, 9, LayerMask.GetMask("Player"));
+        hit = Physics2D.Raycast(transform.position, playerPosition.position - transform.position, 14, LayerMask.GetMask("Player"));
 
         
 
