@@ -17,9 +17,13 @@ public class PlayerController : MonoBehaviour
     public GameObject retryButton;
     
     public Canvas UiStuff;
+
+    public Canvas blackScreen;
     //this is the menu script
 
     private NewBehaviourScript behave;
+
+    private NewBehaviourScript blackBehav;
 
     private bool gameActive = true;
 
@@ -42,6 +46,7 @@ public class PlayerController : MonoBehaviour
         gob = new GameObject();
         Anim = GetComponent<Animator>();
         behave = UiStuff.GetComponent<NewBehaviourScript>();
+        blackBehav = blackScreen.GetComponent<NewBehaviourScript>();
     }
    
 
@@ -145,6 +150,14 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
+    public void winGame()
+    {
+        Anim.SetTrigger("Kill");
+        blackBehav.fade();
+        
+    }
+
 
     IEnumerator startFin()
     {
