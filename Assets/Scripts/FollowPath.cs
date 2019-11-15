@@ -24,13 +24,13 @@ public class FollowPath : MonoBehaviour
     //speed of the turn 
     public float speed, chaseSpeed;
 
-    public bool ChaseEnabled;
+    private bool ChaseEnabled;
 
     private Animator anim;
 
     public LayerMask mask;
 
-    public AudioSource AudioSource;
+    private AudioSource AudioSource;
 
     public AudioClip roarClip;
 
@@ -89,8 +89,10 @@ public class FollowPath : MonoBehaviour
                 print("reached point");
                 waypointIndex += 1;
                 //if the last waypoint is reached then cycle index back to the first 
-                if( waypointIndex== waypoints.Length)
+
+                if( waypointIndex == waypoints.Length-1)
                 {
+                    print("final node reached");
                     waypointIndex = 0;
                 }
             }
@@ -113,7 +115,7 @@ public class FollowPath : MonoBehaviour
          hit = Physics2D.Raycast(transform.position,  playerPosition.position - transform.position ,700,LayerMask.GetMask("Player"));
 
       
-
+        //this might not do anything
         if (hit.collider != null)
         {
            
@@ -122,7 +124,7 @@ public class FollowPath : MonoBehaviour
 
             if(hit.collider.gameObject.tag == "Player")
             {
-                print("player in sights");
+
             }
             else
             {
@@ -132,31 +134,36 @@ public class FollowPath : MonoBehaviour
        
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.transform.gameObject.tag == "Player")
-        {
-
-            print("heck me up");
-            //trigger chase action
-            
-        }
+        
         RaycastHit2D hit;
 
-        hit = Physics2D.Raycast(transform.position, playerPosition.position - transform.position, 700, LayerMask.GetMask("Player"));
+        hit = Physics2D.Raycast(transform.position, playerPosition.position - transform.position, 9, LayerMask.GetMask("Player"));
 
+        
 
-
-        if (hit.collider != null)
+        if (hit.collider != null && hit.collider.gameObject.tag=="Player")
         {
-
-            if (hit.collider.gameObject.tag == "Player")
+            if (hit.collider.gameObject.tag == "Player"&& ChaseEnabled == false)
             {
+                print("seeing player");
                 startChase();
             }
-
+            else
+            {
+                
+                print("player out of sight");
+            }
+        }
+        else
+        {
+            endChase();
         }
     }
+
+
+   
 
     public void startChase()
     {

@@ -13,10 +13,10 @@ public class ChhDoor : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("what what");
+
         if (collision.gameObject.tag == "Player")
         {
-            print("what");
+            
             anim.SetTrigger("Enter Door");
             anim.ResetTrigger("Leave Door");
         }
